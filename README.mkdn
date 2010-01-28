@@ -11,3 +11,5 @@ Requires [sms-fu](http://github.com/brendanlim/sms-fu) to use.
     end
     
     SmsMailer.deliver_notification(user)
+
+Then put erb files in `app/views/sms_mailer` named like `notification.erb` and they'll be used with any keys in @body set as instance variables. In the above example, @user would be a variable in your erb template.
