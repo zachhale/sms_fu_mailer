@@ -52,10 +52,8 @@ module SmsFuMailer
     
     def render_message(template_path, body)
       template = File.open(template_path,'r').read
-      erb = ERB.new(template,0,'','@message')      
-    
       vars_binding = SmsFuMailer::Binder.new(@body).binding
-      erb.result(vars_binding)
+      ERB.new(template).result(vars_binding)
     end
   end
 end
