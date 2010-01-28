@@ -2,12 +2,12 @@ Lets you send SMS's using SmsFu like a regular ActionMailer subclass.
 
 Requires [sms-fu](http://github.com/brendanlim/sms-fu) to use.
 
-  class SmsMailer < SmsFuMailer::Base
-    def notification(user)
-      @recipient[:phone] = user.phone
-      @recipient[:carrier] = user.carrier
-      @body[:user] = user
+    class SmsMailer < SmsFuMailer::Base
+      def notification(user)
+        @recipient[:phone] = user.phone
+        @recipient[:carrier] = user.carrier
+        @body[:user] = user
+      end
     end
-  end
-  
-  SmsMailer.deliver_notification(user)
+    
+    SmsMailer.deliver_notification(user)
